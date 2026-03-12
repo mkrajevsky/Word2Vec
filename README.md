@@ -18,31 +18,31 @@ This project is meant to be educational: the goal is not only to train embedding
 
 Given a target word `w` and a candidate context word `c`, the model estimates:
 
-\[
+$$
 P(+|w,c) = \sigma(c \cdot w)
-\]
+$$
 
 where:
 
-- \(w\) is the target embedding vector
-- \(c\) is the context embedding vector
-- \(\sigma(x) = \frac{1}{1 + e^{-x}}\) is the sigmoid
+- $w$ is the target embedding vector
+- $c$ is the context embedding vector
+- $\sigma(x) = \frac{1}{1 + e^{-x}}$is the sigmoid
 
 For a real context word, we want this probability to be high.  
 For a randomly sampled noise word, we want it to be low.
 
 Using **negative sampling**, for each positive pair `(w, c_pos)` we also sample `k` negative context words `c_neg1, ..., c_negk` and optimize the loss:
 
-\[
+$$
 L(w,c_{pos},c_{neg*}) =
 -\log \sigma(c_{pos}\cdot w)
 -\sum_{i=1}^{k}\log \sigma(-c_{neg_i}\cdot w)
-\]
+$$
 
 This pushes:
 
 - `w` and `c_pos` **closer together**
-- `w` and `c_neg` **farther apart**
+- `w` and `c_neg` **further apart**
 
 ---
 
@@ -65,3 +65,4 @@ This pushes:
 ├── word2vec.py           # main implementation
 |── rural.txt      # optional demo / training script
 └── requirements.txt
+
