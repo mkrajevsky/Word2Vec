@@ -62,7 +62,7 @@ This pushes:
 ```text
 .
 ├── README.md
-├── word2vec.py           # main implementation
+├── task1.ipynb           # main implementation
 |── rural.txt            #training data
 └── requirements.txt
 
