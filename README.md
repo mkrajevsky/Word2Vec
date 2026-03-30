@@ -63,6 +63,6 @@ This pushes:
 .
 ├── README.md
 ├── word2vec.py           # main implementation
-|── rural.txt      # optional demo / training script
+|── rural.txt            #training data
 └── requirements.txt
 
